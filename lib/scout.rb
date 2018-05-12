@@ -1,6 +1,7 @@
 require 'net/http'
+require 'mechanize'
 
-git_url = "https://github.com/users/#{USER_ID}/contributions"
-dom = Net::HTTP.get_print(URI.parse(git_url))
+agent = Mechanize.new
+dom = agent.get("https://github.com/users/#{USER_ID}/contributions")
 
-puts dom
+puts dom.search('svg')
