@@ -52,3 +52,4 @@ build-iPhoneSimulator/
 .rvmrc
 
 /front/node_modules
+/front/dist
