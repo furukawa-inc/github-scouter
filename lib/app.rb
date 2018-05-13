@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require 'json'
 require 'mechanize'
 
 post '/post_id' do
