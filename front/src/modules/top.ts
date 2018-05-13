@@ -1,4 +1,4 @@
-// import axios from 'axios'
+import axios from 'axios'
 
 const initialState = {
   inputValue: ''
@@ -12,7 +12,11 @@ const reducer = (state = initialState, action: any) => {
       })
     case 'POST_ID':
       console.log(state.inputValue)
-      return
+      axios.post('http://localhost:4567/post_id', {
+        user_name: state.inputValue
+      }).then((res) => {
+      
+      })
     default:
       return state
   }
