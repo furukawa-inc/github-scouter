@@ -4,7 +4,9 @@ import * as TopModule from '../modules/top'
 import Top from '../components/top'
 
 const mapStateToProps = (state: any) => {
-  return state.top
+  return {
+    top: state.top
+  }
 }
 
 const mapDispatchToProps = (dispatch: any) => {
