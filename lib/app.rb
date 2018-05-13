@@ -2,6 +2,11 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'mechanize'
 
+get '/' do
+  puts settings.public_dir
+  send_file File.join(settings.public_dir, 'index.html')
+end
+
 post '/post_id' do
   agent = Mechanize.new
   dom = agent.get("https://github.com/users/#{params[:user_name]}/contributions")
