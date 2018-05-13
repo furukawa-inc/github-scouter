@@ -3,7 +3,7 @@ const path = require('path')
 const config = {
   entry: __dirname + '/src/app.tsx',
   output: {
-    path: path.resolve('./dist'),
+    path: path.resolve('../lib/public'),
     filename: 'bundle.js'
   },
   resolve: {
