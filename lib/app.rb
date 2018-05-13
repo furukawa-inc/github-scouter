@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'mechanize'
+require 'json'
 
 get '/' do
   puts settings.public_dir
@@ -8,8 +9,9 @@ get '/' do
 end
 
 post '/post_id' do
+  params = JSON.parse request.body.read
   agent = Mechanize.new
-  dom = agent.get("https://github.com/users/#{params[:user_name]}/contributions")
+  dom = agent.get("https://github.com/users/#{params['user_name']}/contributions")
 
   rects = dom.search('svg g g rect')
 
