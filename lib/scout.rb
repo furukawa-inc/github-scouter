@@ -1,7 +1,17 @@
 require 'net/http'
 require 'mechanize'
 
+USER_ID = ''
+
 agent = Mechanize.new
 dom = agent.get("https://github.com/users/#{USER_ID}/contributions")
 
-puts dom.search('svg')
+rects = dom.search('svg g g rect')
+
+all_fill = []
+
+rects.each do |rect|
+  all_fill << rect.get_attribute(:fill).slice!(1, 6).hex
+end
+
+puts all_fill.inject { |sum, n| sum + n }
