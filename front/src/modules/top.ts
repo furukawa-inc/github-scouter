@@ -1,7 +1,6 @@
-import axios from 'axios'
-
 const initialState = {
-  inputValue: ''
+  inputValue: '',
+  combatPower: 0
 }
 
 const reducer = (state = initialState, action: any) => {
@@ -11,11 +10,8 @@ const reducer = (state = initialState, action: any) => {
         inputValue: action.value
       })
     case 'POST_ID':
-      console.log(state.inputValue)
-      axios.post('http://localhost:4567/post_id', {
-        user_name: state.inputValue
-      }).then((res) => {
-      
+      return Object.assign({}, state, {
+        combatPower: action.value
       })
     default:
       return state
@@ -28,6 +24,6 @@ export const changeText = (etv: any) => {
   return {type: 'CHANGE_TEXT', value: etv }
 }
 
-export const postId = () => {
-  return {type: 'POST_ID'}
+export const postId = (userName: any) => {
+  return {type: 'POST_ID', value: userName}
 }
