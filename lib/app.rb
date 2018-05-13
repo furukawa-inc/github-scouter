@@ -1,16 +1,20 @@
+require 'sinatra'
+require 'sinatra/reloader'
+require 'json'
 require 'mechanize'
 
-USER_ID = 't-kusakabe'
+post '/post_id' do
+  agent = Mechanize.new
+  dom = agent.get("https://github.com/users/#{params[:user_name]}/contributions")
 
-agent = Mechanize.new
-dom = agent.get("https://github.com/users/#{USER_ID}/contributions")
+  rects = dom.search('svg g g rect')
 
-rects = dom.search('svg g g rect')
+  all_fill = []
 
-all_fill = []
+  rects.each do |rect|
+    all_fill << rect.get_attribute(:fill).slice!(1, 6).hex
+  end
 
-rects.each do |rect|
-  all_fill << rect.get_attribute(:fill).slice!(1, 6).hex
+  puts all_fill.inject { |sum, n| sum + n }
+  all_fill.inject { |sum, n| sum + n }.to_json
 end
-
-puts all_fill.inject { |sum, n| sum + n }
