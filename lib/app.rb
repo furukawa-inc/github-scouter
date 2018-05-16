@@ -17,7 +17,7 @@ post '/post_id' do
   all_fill = []
 
   rects.each do |rect|
-    all_fill << rect.get_attribute(:fill).slice!(1, 6).split('').each { |string| conversion string }.join.hex
+    all_fill << rect.get_attribute(:fill).slice!(1, 6).split('').map { |string| conversion string }.join.hex
   end
 
   all_fill.inject { |sum, n| sum + n }.to_json
