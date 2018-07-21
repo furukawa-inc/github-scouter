@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 require 'sinatra/reloader'
 require 'mechanize'
@@ -26,6 +28,5 @@ end
 def conversion(string)
   color_code_a_digit = string
   color_code_a_digit_index = ([*'0'..'10'] + [*'a'..'f']).index(color_code_a_digit)
-  ([*'0'..'10'] + [*'a'..'f'])[-(color_code_a_digit_index+1)]
+  ([*'0'..'10'] + [*'a'..'f'])[-(color_code_a_digit_index + 1)]
 end
-
