@@ -1,11 +1,13 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.4.0)
     backports (3.11.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    jaro_winkler (1.5.1)
     mechanize (2.7.5)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0)
@@ -26,9 +28,23 @@ GEM
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     ntlm-http (0.1.1)
+    parallel (1.12.1)
+    parser (2.5.1.2)
+      ast (~> 2.4.0)
+    powerpack (0.1.2)
     rack (2.0.5)
     rack-protection (2.0.1)
       rack
+    rainbow (3.0.0)
+    rubocop (0.58.1)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.5, != 2.5.1.1)
+      powerpack (~> 0.1)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-progressbar (1.9.0)
     sinatra (2.0.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -45,6 +61,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
+    unicode-display_width (1.4.0)
     webrobots (0.1.2)
 
 PLATFORMS
@@ -52,6 +69,7 @@ PLATFORMS
 
 DEPENDENCIES
   mechanize
+  rubocop
   sinatra
   sinatra-contrib
 
