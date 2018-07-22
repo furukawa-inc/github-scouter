@@ -17,7 +17,7 @@ const Top = (props: any) => (
       value={props.top.inputValue}
       onChange={e => props.changeText(e.target.value)}
     />
-    <button onClick={() => postId(props)}>Send</button>
+    <button onClick={() => postId(props)}>送信</button>
 
     <div>{props.top.combatPower}</div>
   </div>
