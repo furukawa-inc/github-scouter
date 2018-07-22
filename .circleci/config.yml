@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/app
+    docker:
+      - image: circleci/ruby:2.5-node-browsers
+        environment:
+          DB_HOST: 127.0.0.1
+    steps:
+      - checkout
+      - run: bundle install
+      - run: bundle exec rubocop
