@@ -8,4 +8,4 @@ RUN apk update && \
 
 COPY Gemfile Gemfile.lock ./
 
-RUN bundle install
+RUN bundle install -j4
