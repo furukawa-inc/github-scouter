@@ -2,11 +2,19 @@ version: "3"
 services:
   app:
     build: .
-    container_name: "github-scouter"
+    container_name: "github-scouter-app"
     ports:
       - "4567:4567"
     command: bundle exec ruby lib/app.rb -o 0.0.0.0
     volumes:
       - .:/app
+    tty: true
+    stdin_open: true
+
+  front:
+    build: ./front/.
+    container_name: "github-scouter-front"
+    volumes: 
+      - ./front:/app/front
     tty: true
     stdin_open: true
