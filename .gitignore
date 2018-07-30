@@ -54,3 +54,4 @@ build-iPhoneSimulator/
 # /lib/public/bundle.js
 /lib/public/bundle.js.map
 /front/node_modules
+/front/yarn-error.log
