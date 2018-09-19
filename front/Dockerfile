@@ -1,7 +1,7 @@
-FROM node:10.5.0-alpine
+FROM node:alpine
 
 WORKDIR /app/front
 
-COPY package.json yarn.lock ./
+COPY yarn.lock ./
 
-RUN yarn
+RUN yarn install --ignore-engins

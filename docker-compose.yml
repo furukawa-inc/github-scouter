@@ -14,7 +14,9 @@ services:
   front:
     build: ./front/.
     container_name: "github-scouter-front"
+    command: npm run watch
     volumes: 
       - ./front:/app/front
+      - ./lib/public:/app/lib/public
     tty: true
     stdin_open: true
