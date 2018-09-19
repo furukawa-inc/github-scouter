@@ -4,15 +4,15 @@ import * as TopModule from '../modules/top'
 import Top from '../components/top'
 
 const mapStateToProps = (state: any) => {
-  return {
-    top: state.top
-  }
+    return {
+        top: state.top
+    }
 }
 
 const mapDispatchToProps = (dispatch: any) => {
-  return {
-    ...bindActionCreators(TopModule, dispatch)
-  }
+    return {
+        ...bindActionCreators(TopModule, dispatch)
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Top)

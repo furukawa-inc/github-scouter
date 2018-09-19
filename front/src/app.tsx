@@ -8,10 +8,10 @@ const store = configureStore()
 import Top from './containers/top'
 
 ReactDOM.render(
-  <Provider store={store}>
-    <div>
-      <Top />
-    </div>
-  </Provider>,
-  document.getElementById('app')
+    <Provider store={store}>
+        <div>
+            <Top />
+        </div>
+    </Provider>,
+    document.getElementById('app')
 )

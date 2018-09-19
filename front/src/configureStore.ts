@@ -3,14 +3,14 @@ import {createStore as reduxCreateStore, applyMiddleware, combineReducers} from 
 import TopReducer from './modules/top'
 
 const createStore = () => {
-  return reduxCreateStore(
-    combineReducers({
-      top: TopReducer
-    }),
-    applyMiddleware(
-      // logger
+    return reduxCreateStore(
+        combineReducers({
+            top: TopReducer
+        }),
+        applyMiddleware(
+            // logger
+        )
     )
-  )
 }
 
 export default createStore
