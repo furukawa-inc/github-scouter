@@ -8,7 +8,7 @@ interface Top {
     combatPower: number;
 }
 
-const mapStateToProps = (state: any): object => {
+const mapStateToProps = (state: any) => {
     return {
         top: state.top
     };
