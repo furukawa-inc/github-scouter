@@ -9,8 +9,6 @@ interface Top {
 }
 
 const mapStateToProps = (state: any): object => {
-    console.log(typeof state.top);
-    console.log(state);
     return {
         top: state.top
     };
