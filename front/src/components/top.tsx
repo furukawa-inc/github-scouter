@@ -2,15 +2,14 @@ import * as React from 'react';
 import axios from 'axios';
 import { TwitterShareButton, TwitterIcon } from 'react-share';
 
-
 // HACK: componentから分離したい
 const postId = (props: any) => {
     axios.post('/post_id', {
         user_name: props.top.inputValue
     }).then((res) => {
-        props.postId(res.data)
-    })
-}
+        props.postId(res.data);
+    });
+};
 
 const Top = (props: any) => (
     <div>
@@ -36,6 +35,6 @@ const Top = (props: any) => (
             </TwitterShareButton>
         </div>
     </div>
-)
+);
 
-export default Top
+export default Top;

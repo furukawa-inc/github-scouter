@@ -3,7 +3,14 @@ import {connect} from 'react-redux'
 import * as TopModule from '../modules/top'
 import Top from '../components/top'
 
-const mapStateToProps = (state: any) => {
+interface Top {
+    inputValue:  string;
+    combatPower: number;
+}
+
+const mapStateToProps = (state: any): object => {
+    console.log(typeof state.top);
+    console.log(state);
     return {
         top: state.top
     }
