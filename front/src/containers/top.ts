@@ -1,7 +1,7 @@
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
-import * as TopModule from '../modules/top'
-import Top from '../components/top'
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as TopModule from '../modules/top';
+import Top from '../components/top';
 
 interface Top {
     inputValue:  string;
@@ -13,13 +13,13 @@ const mapStateToProps = (state: any): object => {
     console.log(state);
     return {
         top: state.top
-    }
-}
+    };
+};
 
 const mapDispatchToProps = (dispatch: any) => {
     return {
         ...bindActionCreators(TopModule, dispatch)
-    }
-}
+    };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Top)
+export default connect(mapStateToProps, mapDispatchToProps)(Top);
